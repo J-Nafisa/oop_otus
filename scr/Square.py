@@ -1,4 +1,4 @@
-from Figure import Figure
+from scr.Figure import Figure
 
 class Square(Figure):
     def __init__(self, side):

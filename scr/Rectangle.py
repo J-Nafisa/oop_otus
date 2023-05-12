@@ -18,8 +18,3 @@ class Rectangle(Figure):
     def perimeter(self):
         return 2 * (self.width + self.height)
 
-    def add_area(self, figure):
-        if not isinstance(figure, Figure):
-            raise ValueError("The argument must be an instance of Figure.")
-        return self.area + figure.area
-

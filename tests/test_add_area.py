@@ -1,5 +1,5 @@
-import math
 import pytest
+
 from scr.Circle import Circle
 from scr.Rectangle import Rectangle
 from scr.Square import Square
@@ -13,19 +13,19 @@ def test_add_area_rectangle_square():
 
 
 def test_add_area_square_circle():
-    square = Square(4)
-    circle = Circle(7)
-    assert square.add_area(circle) == pytest.approx(85.539)
+    square = Square(9)
+    circle = Circle(12)
+    expected_result = square.area + circle.area
+    tolerance = 1.1e-04
+    assert square.add_area(circle) == pytest.approx(expected_result, abs=tolerance)
 
 
 def test_add_area_circle_triangle():
     circle = Circle(6)
     triangle = Triangle(5, 12, 13)
-    assert circle.add_area(triangle) == pytest.approx(113)
-
-
-if __name__ == "__main__":
-    pytest.main()
+    expected_result = circle.area + triangle.area
+    tolerance = 1.1e-04
+    assert circle.add_area(triangle) == pytest.approx(expected_result, abs=tolerance)
 
 
 

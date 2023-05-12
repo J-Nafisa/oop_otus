@@ -28,8 +28,3 @@ class Triangle(Figure):
     @property
     def perimeter(self):
         return self.a + self.b + self.c
-
-    def add_area(self, figure):
-        if not isinstance(figure, Figure):
-            raise ValueError("The argument must be an instance of Figure.")
-        return self.area + figure.area
